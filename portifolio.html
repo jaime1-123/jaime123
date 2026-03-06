@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jaime  | Portfólio</title>
+
+<style>
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:white;
+}
+
+header{
+    text-align:center;
+    padding:60px 20px;
+}
+
+header h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+header p{
+    font-size:18px;
+    opacity:0.9;
+}
+
+section{
+    padding:50px 20px;
+    max-width:1000px;
+    margin:auto;
+}
+
+.card{
+    background:rgba(255,255,255,0.08);
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:25px;
+    backdrop-filter: blur(10px);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    background:rgba(255,255,255,0.15);
+}
+
+h2{
+    border-left:5px solid #00ffcc;
+    padding-left:10px;
+    margin-bottom:20px;
+}
+
+ul{
+    list-style:none;
+    padding:0;
+}
+
+ul li{
+    margin-bottom:10px;
+}
+
+button{
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    background:#00ffcc;
+    color:#000;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:white;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:rgba(0,0,0,0.3);
+    margin-top:40px;
+}
+/* FOTO DE PERFIL */
+.profile-img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #00ffcc;
+    box-shadow:0 0 25px rgba(0,255,204,0.6);
+    margin-bottom:20px;
+    transition:0.3s;
+}
+.profile-img:hover{
+    transform:scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+      <!-- FOTO AQUI -->
+    <img src="jaime.jpg" alt="Foto de Jaime" class="profile-img">
+    <h1>Jaime Ribeiro</h1>
+    <p>Desenvolvedor Web | Criador de Soluções Digitais | Empreendedor Tecnológico</p>
+</header>
+
+<section>
+    <div class="card">
+        <h2>Sobre Mim</h2>
+        <p>
+            Sou um desenvolvedor apaixonado por tecnologia e inovação.
+            Gosto de transformar ideias em soluções reais através da programação.
+            Estou sempre aprendendo e buscando crescer no mercado digital.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Habilidades</h2>
+        <ul>
+            <li>✔ HTML</li>
+            <li>✔ CSS</li>
+            <li>✔ JavaScript</li>
+            <li>✔ Desenvolvimento de Interfaces Modernas</li>
+            <li>✔ Criação de Projetos Digitais</li>
+            <li>✔ Informatica basica e EXCEL</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Projeto em Destaque</h2>
+        <h3>EcoCidade</h3>
+        <p>
+            Plataforma digital para gestão e recolha de resíduos,
+            promovendo organização e sustentabilidade nas comunidades.
+        </p>
+        <button><a href="ecocidade.html">Ver Projeto</a></button>
+    </div>
+
+    <div class="card">
+        <h2>Contato</h2>
+        <p>Email: jaimecelina@gmail.com</p>
+        <p>Email Alternativo: jaimeribeirojaimeribeiro@gmail.com</p>
+        <p>Telefone: 863039909</p>
+    </div>
+</section>
+
+<footer>
+    © 2026 Jaime Ribeiro - Todos os Direitos Reservados
+</footer>
+
+</body>
+</html>
