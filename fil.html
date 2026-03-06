@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meu Perfil | EcoCidade</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #b7bab9, #e6e8e7);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.profile-card{
+    background:white;
+    width:350px;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.profile-card img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:15px;
+}
+
+.profile-card h2{
+    margin:10px 0 5px;
+    color:#2c3e50;
+}
+
+.profile-card p{
+    margin:5px 0;
+    color:#555;
+    font-size:14px;
+}
+
+.social-buttons{
+    margin-top:20px;
+}
+
+.social-buttons a{
+    display:block;
+    margin:8px 0;
+    padding:10px;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+    color:white;
+    transition:0.3s;
+}
+
+.facebook{ background:#3b5998; }
+.instagram{ background:#e1306c; }
+.whatsapp{ background:#25d366; }
+.linkedin{ background:#0077b5; }
+
+.social-buttons a:hover{
+    opacity:0.8;
+}
+
+/* BOTÃO EDITAR */
+.edit-btn{
+    margin-top:15px;
+    display:inline-block;
+    padding:10px 20px;
+    background:#2c3e50;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.edit-btn:hover{
+    background:#34495e;
+}
+button:hover{
+    background:#219150;
+}
+
+.voltar{
+    background:#e74c3c;
+}
+
+.voltar:hover{
+    background:#c0392b;
+}
+</style>
+
+</head>
+<body>
+
+<div class="profile-card">
+    
+    <img src="jaime.jpg" alt="foto de aluno">
+
+    <h2>Jaime Ribeiro</h2>
+    <p>Fundador do Projeto EcoCidade</p>
+
+    <p>📞 863039909</p>
+    <p>📧 jaimecelina@gmail.com</p>
+    <p>📧 jaimeribeirojaimeribeiro@gmail.com</p>
+
+    <div class="social-buttons">
+        <a href="#" class="facebook">Facebook</a>
+        <a href="#" class="instagram">Instagram</a>
+        <a href="https://wa.me/258863039909" class="whatsapp">WhatsApp</a>
+        <a href="#" class="linkedin">LinkedIn</a>
+    </div>
+
+
+ <button class="edit-btn" onclick="editarPerfil()">✏ Editar Perfil</button><br><br><!-- BOTÃO VOLTAR POR BAIXO -->
+    <button class="voltar" onclick="voltarPagina()"><a href="resol.html"></a>⬅ Voltar</button>
+
+</div>
+<script>
+    function voltarPagina(){
+    history.back();
+}
+</script>
+</body>
+
+</html>

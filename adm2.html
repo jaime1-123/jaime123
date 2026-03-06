@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Administração | Relatórios</title>
+  <style>/* ===== RELATÓRIOS ADMIN ===== */
+
+.relatorio-container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.relatorio-container h2 {
+  text-align: center;
+  color: #1b8f4c;
+  margin-bottom: 30px;
+}
+
+/* Resumo */
+.relatorio-resumo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.relatorio-resumo div {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.status-ok {
+  color: #1b8f4c;
+  font-weight: bold;
+}
+
+/* Filtros */
+.relatorio-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.relatorio-filtros select,
+.relatorio-filtros button {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.relatorio-filtros button {
+  background: #1b8f4c;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Tabela */
+.relatorio-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.relatorio-tabela th,
+.relatorio-tabela td {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.relatorio-tabela th {
+  background: #f2f2f2;
+}
+
+/* Botões */
+.btn-ver {
+  background: #1b8f4c;
+  color: #fff;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #1b8f4c;
+  color: #fff;
+}
+
+.navbar nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.logo {
+  font-family:   Arial, sans-serif;
+  font-size: 20px;
+ 
+
+
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    list-style: none;
+    background: #1b8f4c;
+}
+nav a:hover{
+    color: rgb(15, 15, 15);
+    padding: 6px;
+}
+</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">📄 Administração</div>
+  <nav><ul>
+   <li><a href="resol.html">Painel</a></li> 
+     <li></li><a href="estatistica2.html">Estatísticas</a></li> 
+     <li></li><a href="admin-relatorios.html" class="active">Relatórios</a></li> 
+     <li></li><a href="2lixo.html">Sair</a></li> </ul>
+  </nav>
+</header>
+
+<div class="relatorio-container">
+
+  <h2>Gestão de Relatórios</h2>
+
+  <!-- RESUMO -->
+  <div class="relatorio-resumo">
+    <div>Total de Relatórios <span id="totalRelatorios">12</span></div>
+    <div>Último Relatório <span>Janeiro 2026</span></div>
+    <div>Status <span class="status-ok">Atualizado</span></div>
+  </div>
+
+  <!-- FILTROS -->
+  <div class="relatorio-filtros">
+    <select id="filtroMes">
+      <option>Janeiro</option>
+      <option>Fevereiro</option>
+      <option>Março</option>
+    </select>
+
+    <select id="filtroAno">
+      <option>2026</option>
+      <option>2025</option>
+    </select>
+
+    <button onclick="gerarRelatorio()">Gerar Relatório</button>
+  </div>
+
+  <!-- LISTA -->
+  <table class="relatorio-tabela">
+    <thead>
+      <tr>
+        <th>Mês</th>
+        <th>Ano</th>
+        <th>Denúncias</th>
+        <th>Resolvidas</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody id="listaRelatorios">
+      <tr>
+        <td>Janeiro</td>
+        <td>2026</td>
+        <td>120</td>
+        <td>75</td>
+        <td><button class="btn-ver">Ver</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<script src="js/relatorios.js"></script>
+<script>function gerarRelatorio() {
+  const mes = document.getElementById("filtroMes").value;
+  const ano = document.getElementById("filtroAno").value;
+
+  alert("Relatório de " + mes + " / " + ano + " gerado com sucesso!");
+}
+</script>
+</body>
+</html>

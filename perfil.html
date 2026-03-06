@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meu Perfil | EcoCidade</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #b7bab9, #e6e8e7);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.profile-card{
+    background:white;
+    width:350px;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.profile-card img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:15px;
+}
+
+.profile-card h2{
+    margin:10px 0 5px;
+    color:#2c3e50;
+}
+
+.profile-card p{
+    margin:5px 0;
+    color:#555;
+    font-size:14px;
+}
+
+input{
+    width:90%;
+    padding:6px;
+    margin:5px 0;
+    border-radius:6px;
+    border:1px solid #ccc;
+}
+
+.social-buttons{
+    margin-top:20px;
+}
+
+.social-buttons a{
+    display:block;
+    margin:8px 0;
+    padding:10px;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+    color:white;
+    transition:0.3s;
+}
+
+.facebook{ background:#3b5998; }
+.instagram{ background:#e1306c; }
+.whatsapp{ background:#25d366; }
+.linkedin{ background:#0077b5; }
+
+.social-buttons a:hover{
+    opacity:0.8;
+}
+
+/* BOTÕES */
+.edit-btn{
+    margin-top:15px;
+    padding:10px 20px;
+    background:#2c3e50;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.edit-btn:hover{
+    background:#34495e;
+}
+
+.voltar{
+    margin-top:10px;
+    padding:10px 20px;
+    background:#e74c3c;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.voltar:hover{
+    background:#c0392b;
+}
+</style>
+</head>
+
+<body>
+
+<div class="profile-card">
+    
+    <img src="jaime.jpg" id="fotoPerfil" alt="foto de aluno" onclick="trocarFoto()">
+
+<input type="file" id="inputFoto" accept="image/*" style="display:none">
+
+    <h2 id="nome">Jaime Ribeiro</h2>
+    <p id="cargo">Fundador do Projeto EcoCidade</p>
+
+    <p id="telefone">📞 863039909</p>
+    <p id="email1">📧 jaimecelina@gmail.com</p>
+    <p id="email2">📧 jaimeribeirojaimeribeiro@gmail.com</p>
+
+    <div class="social-buttons">
+        <a href="#" class="facebook">Facebook</a>
+        <a href="#" class="instagram">Instagram</a>
+        <a href="https://wa.me/258863039909" class="whatsapp">WhatsApp</a>
+        <a href="#" class="linkedin">LinkedIn</a>
+    </div>
+
+    <button class="edit-btn" onclick="editarPerfil()" id="botaoEditar">
+        ✏ Editar Perfil
+    </button>
+
+    <button class="voltar" onclick="history.back()"><a href="resol.html"></a>
+        ⬅ Voltar
+    </button>
+    
+    <button class="voltar" onclick="voltarPagina()"><a href="resol.html"></a>⬅ Voltar</button>
+
+<script>
+
+let editando = false;
+function voltarPagina(){
+    history.back();}
+function editarPerfil(){
+
+    if(!editando){
+
+        // Transformar textos em inputs
+        document.getElementById("nome").innerHTML =
+        `<input type="text" id="inputNome" value="Jaime Ribeiro">`;
+
+        document.getElementById("cargo").innerHTML =
+        `<input type="text" id="inputCargo" value="Fundador do Projeto EcoCidade">`;
+
+        document.getElementById("telefone").innerHTML =
+        `<input type="text" id="inputTelefone" value="863039909">`;
+
+        document.getElementById("email1").innerHTML =
+        `<input type="text" id="inputEmail1" value="jaimecelina@gmail.com">`;
+
+        document.getElementById("email2").innerHTML =
+        `<input type="text" id="inputEmail2" value="jaimeribeirojaimeribeiro@gmail.com">`;
+
+        document.getElementById("botaoEditar").innerText = "💾 Salvar";
+        editando = true;
+
+    }else{
+
+        // Salvar dados
+        let nome = document.getElementById("inputNome").value;
+        let cargo = document.getElementById("inputCargo").value;
+        let telefone = document.getElementById("inputTelefone").value;
+        let email1 = document.getElementById("inputEmail1").value;
+        let email2 = document.getElementById("inputEmail2").value;
+
+        document.getElementById("nome").innerText = nome;
+        document.getElementById("cargo").innerText = cargo;
+        document.getElementById("telefone").innerText = "📞 " + telefone;
+        document.getElementById("email1").innerText = "📧 " + email1;
+        document.getElementById("email2").innerText = "📧 " + email2;
+
+        document.getElementById("botaoEditar").innerText = "✏ Editar Perfil";
+        editando = false;
+    }
+}
+
+
+
+function editarPerfil(){
+
+    if(!editando){
+
+        document.getElementById("nome").innerHTML =
+        `<input type="text" id="inputNome" value="Jaime Ribeiro">`;
+
+        document.getElementById("cargo").innerHTML =
+        `<input type="text" id="inputCargo" value="Fundador do Projeto EcoCidade">`;
+
+        document.getElementById("telefone").innerHTML =
+        `<input type="text" id="inputTelefone" value="863039909">`;
+
+        document.getElementById("email1").innerHTML =
+        `<input type="text" id="inputEmail1" value="jaimecelina@gmail.com">`;
+
+        document.getElementById("email2").innerHTML =
+        `<input type="text" id="inputEmail2" value="jaimeribeirojaimeribeiro@gmail.com">`;
+
+        document.getElementById("botaoEditar").innerText = "💾 Salvar";
+        editando = true;
+
+    }else{
+
+        let nome = document.getElementById("inputNome").value;
+        let cargo = document.getElementById("inputCargo").value;
+        let telefone = document.getElementById("inputTelefone").value;
+        let email1 = document.getElementById("inputEmail1").value;
+        let email2 = document.getElementById("inputEmail2").value;
+
+        document.getElementById("nome").innerText = nome;
+        document.getElementById("cargo").innerText = cargo;
+        document.getElementById("telefone").innerText = "📞 " + telefone;
+        document.getElementById("email1").innerText = "📧 " + email1;
+        document.getElementById("email2").innerText = "📧 " + email2;
+
+        document.getElementById("botaoEditar").innerText = "✏ Editar Perfil";
+        editando = false;
+    }
+}
+
+/* TROCAR FOTO */
+function trocarFoto(){
+    if(editando){
+        document.getElementById("inputFoto").click();
+    }
+}
+
+document.getElementById("inputFoto").addEventListener("change", function(event){
+    const reader = new FileReader();
+    reader.onload = function(){
+        document.getElementById("fotoPerfil").src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+});
+
+</script>
+
+</body>
+</html>

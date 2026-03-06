@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Relatório Mensal | EcoCidade</title>
+ <style>/* ===== RELATÓRIO OFICIAL ===== */
+
+.relatorio-pagina {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 40px;
+  background: #ffffff;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+/* Cabeçalho */
+.relatorio-header {
+  text-align: center;
+  border-bottom: 2px solid #1b8f4c;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.relatorio-header h1 {
+  color: #1b8f4c;
+  margin-bottom: 5px;
+}
+
+/* Blocos */
+.relatorio-bloco {
+  margin-bottom: 30px;
+}
+
+.relatorio-bloco h2 {
+  color: #1b8f4c;
+  margin-bottom: 10px;
+}
+
+.relatorio-bloco p,
+.relatorio-bloco li {
+  line-height: 1.6;
+}
+
+/* Cards */
+.relatorio-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.relatorio-cards div {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.relatorio-cards span {
+  display: block;
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #1b8f4c;
+  margin-top: 8px;
+}
+
+/* Rodapé */
+.relatorio-footer {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  margin-top: 40px;
+  font-size: 0.9em;
+}
+button {
+        padding: 12px 35px;
+        font-size: 18px;
+        border: none;
+        border-radius: 30px;
+        background-color: white;
+        color: #1f2823;
+        cursor: pointer;
+        transition: 0.3s;
+        justify-content: center;
+        text-align: center;
+        justify-items: center;
+    }
+</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body><div class="container">
+<button onclick="voltar()" ><a href="2lixo.html"></a>Inicio →</button></div>
+<div class="relatorio-pagina">
+
+  <!-- CABEÇALHO -->
+  <header class="relatorio-header">
+    <h1>Relatório Mensal de Recolha de Lixo</h1>
+    <p>EcoCidade Inteligente</p>
+    <span>Janeiro de 2026</span>
+  </header>
+
+  <!-- INFORMAÇÕES GERAIS -->
+  <section class="relatorio-bloco">
+    <h2>1. Informações Gerais</h2>
+    <p>
+      Este relatório apresenta os dados referentes às denúncias de lixo urbano
+      registadas através do sistema EcoCidade Inteligente durante o período
+      indicado.
+    </p>
+  </section>
+
+  <!-- RESUMO NUMÉRICO -->
+  <section class="relatorio-bloco">
+    <h2>2. Resumo Estatístico</h2>
+
+    <div class="relatorio-cards">
+      <div>Total de denúncias <span>120</span></div>
+      <div>Denúncias resolvidas <span>75</span></div>
+      <div>Denúncias pendentes <span>45</span></div>
+      <div>Taxa de resolução <span>62%</span></div>
+    </div>
+  </section>
+
+  <!-- ANÁLISE -->
+  <section class="relatorio-bloco">
+    <h2>3. Análise dos Dados</h2>
+    <p>
+      Os dados indicam que a maioria das denúncias foi resolvida dentro do período
+      analisado. As zonas com maior incidência de lixo continuam a necessitar de
+      atenção prioritária por parte das equipas de recolha.
+    </p>
+  </section>
+
+  <!-- ZONAS CRÍTICAS -->
+  <section class="relatorio-bloco">
+    <h2>4. Zonas com Maior Incidência</h2>
+    <ul>
+      <li>Mercado Central</li>
+      <li>Triangulo</li>
+      <li>Bairro Norte</li>
+    </ul>
+  </section>
+
+  <!-- CONCLUSÃO -->
+  <section class="relatorio-bloco">
+    <h2>5. Conclusão</h2>
+    <p>
+      O EcoCidade Inteligente demonstrou ser uma ferramenta eficaz no apoio à
+      gestão de resíduos sólidos urbanos, contribuindo para decisões mais rápidas
+      e baseadas em dados reais.
+    </p>
+  </section>
+
+  <!-- ASSINATURA -->
+  <footer class="relatorio-footer">
+    <p>Responsável: ____________________________</p>
+    <p>Data: ____ / ____ / 2026</p>
+  </footer>
+
+</div>
+
+</body>
+<script>
+function voltar(){
+    // Aqui você pode colocar o link da próxima página
+    window.location.href = "2lixo.html";
+}
+</script>
+</html>

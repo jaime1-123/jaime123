@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Mapa de Zonas Críticas | EcoCidade</title>
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet/dist/leaflet.css"
+  />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>/* MAPA */
+.map-section {
+  padding: 40px;
+  text-align: center;
+}
+
+#map {
+  height: 450px;
+  margin: 20px auto;
+  border-radius: 15px;
+  max-width: 900px;
+}
+
+.legenda {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.legenda span {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 0 5px;
+  border-radius: 50%;
+}
+
+.vermelho { background: red; }
+.amarelo { background: orange; }
+.verde { background: green; }
+.nav {
+    background: rgb(14, 225, 46);
+    padding: 100%;
+    height: 50%;
+}
+header{
+  height: 100px;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #1b8f4c;
+  color: #fff;
+}
+
+.navbar nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+nav ul{
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    list-style: none;
+    background: #1b8f4c;
+}
+nav a:hover{
+    color: rgb(15, 15, 15);
+    padding: 6px;
+}
+.logo {
+  font-family:   Arial, sans-serif;
+  font-size: 30px;
+
+}
+</style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">♻️ EcoCidade</div>
+    <nav><ul>
+     <li><a href="2lixo.html">Início</a></li> 
+     <li> <a href="reportar.html">Reportar</a></li> 
+      <li><a href="estatistica2.html">Estatísticas</a></li> 
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAPA -->
+  <section class="map-section">
+    <h2>🗺️ Mapa de Zonas Críticas</h2>
+    <p>Visualize os locais com maior concentração de lixo</p>
+
+    <div id="map"></div>
+
+    <div class="legenda">
+      <span class="vermelho"></span> Muito lixo
+      <span class="amarelo"></span> Médio
+      <span class="verde"></span> Pouco
+    </div>
+  </section>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="js/mapa.js"></script>
+  <script>// Inicializar mapa (exemplo: Maputo)
+const map = L.map('map').setView([-25.9653, 32.5892], 12);
+
+// Camada do mapa
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap'
+}).addTo(map);
+
+// Ícones por nível de lixo
+function corPorNivel(nivel) {
+  if (nivel === "alto") return "red";
+  if (nivel === "medio") return "orange";
+  return "green";
+}
+
+// Dados simulados (depois virão do formulário)
+const zonas = [
+  { bairro: "Bairro Central", lat: -25.963, lng: 32.589, nivel: "alto" },
+  { bairro: "Chamanculo", lat: -25.979, lng: 32.573, nivel: "medio" },
+  { bairro: "Maxaquene", lat: -25.952, lng: 32.565, nivel: "baixo" }
+];
+
+// Adicionar marcadores
+zonas.forEach(zona => {
+  L.circleMarker([zona.lat, zona.lng], {
+    radius: 10,
+    color: corPorNivel(zona.nivel),
+    fillColor: corPorNivel(zona.nivel),
+    fillOpacity: 0.8
+  })
+  .addTo(map)
+  .bindPopup(`
+    <strong>${zona.bairro}</strong><br>
+    Nível de lixo: ${zona.nivel.toUpperCase()}
+  `);
+});
+</script>
+</body>
+</html>

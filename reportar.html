@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Reportar Lixo | EcoCidade</title>
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>/* FORMULÁRIO REPORTAR */
+.form-section {
+  max-width: 500px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  animation: fadeIn 0.6s ease-in;
+}
+
+.form-section h2 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.form-section p {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #666;
+}
+
+form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+form textarea {
+  resize: none;
+  height: 80px;
+}
+
+form button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 12px;
+  background: #1b8f4c;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #15703b;
+}
+
+#mensagem {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+  color: green;
+}
+
+/* ANIMAÇÃO */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.navbar{
+    background: #1b8f4c;
+padding: 10px;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    list-style: none;
+}
+</style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo"><h1>♻️ EcoCidade</h1></div>
+    <nav><ul>
+     <li> <a href="2lixo.html">Início</a></li>
+       <li> <a href="mapa.html">Mapa</a></li>
+     <li> <a href="relatorio.html">relatorio</a></li>
+      <li>  <a href="estatisticas2.html">Estatísticas</a></li>
+    </ul></nav>
+  </header>
+  
+
+  <!-- FORMULÁRIO -->
+  <section class="form-section">
+    <h2>📸 Reportar Lixo</h2>
+    <p>Ajude a manter a cidade limpa enviando uma denúncia</p>
+
+    <form id="formDenuncia">
+      
+      <label>Foto do Lixo</label>
+      <input type="file" id="foto" accept="image/*" required>
+
+      <label>Tipo de Lixo</label>
+      <select id="tipo" required>
+        <option value="">Selecione</option>
+        <option>Doméstico</option>
+        <option>Plástico</option>
+        <option>Entulho</option>
+        <option>Orgânico</option>
+        <option>Outro</option>
+      </select>
+
+      <label>Descrição</label>
+      <textarea id="descricao" placeholder="Descreva a situação..." required></textarea>
+
+      <label>Bairro / Local</label>
+      <input type="text" id="bairro" placeholder="Ex: Bairro Central" required>
+
+      <button type="submit">Enviar Denúncia</button>
+    </form>
+
+    
+
+  </section>
+
+</body>
+<script src="js/main.js">
+</script>
+
+</html>

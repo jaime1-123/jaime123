@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | EcoCidade</title>
+  <style>/* LOGIN */
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #1b8f4c, #2ecc71);
+}
+
+.login-card {
+  background: #fff;
+  padding: 35px;
+  width: 100%;
+  max-width: 380px;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  text-align: center;
+  animation: fadeIn 0.6s ease-in;
+}
+
+.login-card h2 {
+  margin-bottom: 10px;
+}
+
+.login-card p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.login-card label {
+  display: block;
+  text-align: left;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.login-card button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 12px;
+  background: #1b8f4c;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-card button:hover {
+  background: #15703b;
+}
+
+#erroLogin {
+  margin-top: 15px;
+  color: red;
+  font-weight: bold;
+}
+voltar{
+    background:#e74c3c;
+}
+
+.voltar:hover{
+    background:#c0392b;
+}
+
+</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="login-card">
+      <h2>🔐 Login Administrativo</h2>
+      <p>Acesso restrito ao painel de gestão</p>
+
+      <form id="loginForm">
+        <label>Email</label>
+        <input type="email" id="email" placeholder="admin@ecocidade.com" required>
+
+        <label>Senha</label>
+        <input type="password" id="senha" placeholder="••••••••" required>
+
+        <button type="submit"><a href="2lixo.html"></a> Entrar</button>
+        
+      </form>
+
+      <p id="erroLogin"></p>
+  
+    <p style="margin-top:15px;">
+  Não tem conta?
+  <a href="register.html" style="color:#1b8f4c; font-weight:bold;">
+    Criar conta
+  </a>
+  <!-- BOTÃO VOLTAR POR BAIXO -->
+    <button class="voltar" onclick="voltarPagina()"><a href="resol.html"></a>⬅ Voltar</button>
+
+</p>
+</form>
+  </div>
+
+  <script src="js/login.js"></script>
+</body>
+</html>

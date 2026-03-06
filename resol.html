@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoCidade | Problemas Resolvidos</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #16a085, #27ae60);
+    margin:0;
+    padding:40px;
+}
+
+.container{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+h2{
+    text-align:center;
+    color:#2c3e50;
+}
+
+table{
+    width:100%;
+    border-collapse: collapse;
+    margin-top:20px;
+}
+
+th, td{
+    padding:12px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+
+th{
+    background:#27ae60;
+    color:white;
+}
+
+.status{
+    color:green;
+    font-weight:bold;
+}
+
+tr:hover{
+    background:#f2f2f2;
+}
+
+header{
+  height: 100px;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    list-style: none;
+    background: green;
+}
+
+nav a{
+    text-decoration: none;
+    color: rgb(241, 243, 241);
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.3;
+}
+nav a:hover{
+    color: rgb(12, 13, 13);
+   
+    padding: 6px;
+}
+</style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">♻️ EcoCidade</div>
+    <nav><ul>
+     <li><a href="2lixo.html">Início</a></li> 
+     
+      <li><a href="solicitaco.html">Solicitar Recolha</a></li> 
+      </ul>
+    </nav>
+  </header>
+<div class="container">
+    <h2>Empresas - Problemas Resolvidos</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Empresa</th>
+                <th>Tipo de Resíduo</th>
+                <th>Quantidade (kg)</th>
+                <th>Data da Recolha</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Super Mercado Verde</td>
+                <td>Plástico</td>
+                <td>120</td>
+                <td>10/02/2026</td>
+                <td class="status">Resolvido</td>
+            </tr>
+
+            <tr>
+                <td>Fábrica MetalMoz</td>
+                <td>Metal</td>
+                <td>300</td>
+                <td>08/02/2026</td>
+                <td class="status">Resolvido</td>
+            </tr>
+
+            <tr>
+                <td>Hotel Sol & Mar</td>
+                <td>Orgânico</td>
+                <td>80</td>
+                <td>05/02/2026</td>
+                <td class="status">Resolvido</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>

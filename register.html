@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Criar Conta | EcoCidade</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #1b8f4c, #2ecc71);
+}
+
+.login-card {
+  background: #fff;
+  padding: 35px;
+  width: 100%;
+  max-width: 380px;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  text-align: center;
+  animation: fadeIn 0.6s ease-in;
+}
+
+.login-card h2 {
+  margin-bottom: 10px;
+}
+
+.login-card p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.login-card label {
+  display: block;
+  text-align: left;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.login-card button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 12px;
+  background: #1b8f4c;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-card button:hover {
+  background: #15703b;
+}
+
+#erroLogin {
+  margin-top: 15px;
+  color: red;
+  font-weight: bold;
+}
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="login-card">
+      <h2>📝 Criar Conta</h2>
+      <p>Registo de administrador</p>
+
+      <form id="registerForm">
+        <label>Nome da Empresa</label>
+        <input type="text" id="nome" required>
+
+        <label>Email</label>
+        <input type="email" id="email" required>
+
+        <label>Senha</label>
+        <input type="password" id="senha" required>
+
+        <label>Confirmar Senha</label>
+        <input type="password" id="confirmarSenha" required>
+
+        <button type="submit"><a href="2lixo.html"></a>  Entrar</button>
+      </form>
+
+      <p id="msgRegister"></p>
+
+      <p style="margin-top:15px;">
+        Já tem conta?
+        <a href="login.html" style="color:#1b8f4c; font-weight:bold;">
+          Fazer login
+        </a>
+      </p>
+    </div>
+  </div>
+
+  <script> 
+    
+  </script>
+</body>
+</html>

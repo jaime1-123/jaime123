@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>EcoCidade Inteligente</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #f4f6f8;
+  color: #333;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #1b8f4c;
+  color: #fff;
+}
+
+.navbar nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.btn-login {
+  background: #fff;
+  color: #1b8f4c !important;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(to right, #1b8f4c, #2ecc71);
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.1em;
+  margin-bottom: 25px;
+}
+
+.btn-primary {
+  background: #fff;
+  color: #1b8f4c;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #e8e8e8;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 60px 40px;
+}
+
+.card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 15px;
+  text-decoration: none;
+  color: #1b8f4c;
+  font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #1b8f4c;
+  color: #fff;
+}
+/* CARD ADMIN */
+.admin-card {
+  border: 2px solid #1b8f4c;
+  background: linear-gradient(135deg, #e9f7ef, #ffffff);
+}
+
+.admin-card h3 {
+  color: #1b8f4c;
+}
+
+.admin-card a {
+  background: #1b8f4c;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 20px;
+}
+
+.admin-card a:hover {
+  background: #15703b;
+}
+
+</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">♻️ EcoCidade</div>
+    <nav>
+      <a href="adm2.html">Gestao de relatorio</a>
+      <a href="relatorio.html">Relatório</a>
+      <a href="mapa.html">Mapa</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="2login.html" class="btn-login">Login</a>
+      <a href="fil.html">Perfil</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Juntos por uma cidade mais limpa</h1>
+    <p>Ajude a identificar zonas com lixo e melhorar a recolha urbana</p>
+    <a href="reportar.html" class="btn-primary">Reportar Lixo</a>
+  </section>
+
+  <!-- CARDS -->
+  <section class="cards">
+    <div class="card">
+      <h3>📸 Reportar Lixo</h3>
+      <p>Envie fotos e localização de zonas com lixo acumulado.</p>
+      <a href="reportar.html">Aceder →</a>
+    </div>
+
+    <div class="card">
+      <h3>🗺️ Zonas Críticas</h3>
+      <p>Veja no mapa os bairros com maior concentração de lixo.</p>
+      <a href="mapa.html">Ver mapa →</a>
+    </div>
+
+    <div class="card">
+      <h3>📊 Estatísticas</h3>
+      <p>Acompanhe dados mensais e relatórios automáticos.</p>
+      <a href="estatistica2.html">Ver dados →</a>
+    </div>
+    <div class="card admin-card">
+  <h3>🧑‍💼 Painel De Emprezas</h3>
+  <p>Acesso exclusivo para gestão de denúncias de emprezas.</p>
+  <a href="resol.html">Aceder ao Painel →</a>
+</div>
+
+  </section>
+ 
+
+
+<br><br><br>
+  <!-- RODAPÉ -->
+  <footer>
+    
+    <p>© 2026 EcoCidade Inteligente | Projecto Comunitário</p>
+  </footer>
+
+</body>
+</html>

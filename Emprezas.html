@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoCidade | Solicitação de Recolha</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1abc9c, #2ecc71);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+}
+
+.container{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    width:400px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#2c3e50;
+}
+
+input, select, textarea{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border-radius:6px;
+    border:1px solid #ccc;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#27ae60;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#219150;
+}
+
+#mensagem{
+    margin-top:10px;
+    text-align:center;
+    font-weight:bold;
+}
+.navbar{
+    background: #1b8f4c;
+padding: 10px;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    list-style: none;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Solicitar Recolha de Resíduos</h2>
+
+    <form id="formRecolha">
+        <input type="text" id="empresa" placeholder="Nome da Empresa" required>
+        <input type="text" id="endereco" placeholder="Endereço" required>
+        <input type="tel" id="telefone" placeholder="Telefone" required>
+        <input type="email" id="email" placeholder="Email" required>
+
+        <select id="tipoResiduo" required>
+            <option value="">Tipo de Resíduo</option>
+            <option>Plástico</option>
+            <option>Vidro</option>
+            <option>Metal</option>
+            <option>Papel</option>
+            <option>Orgânico</option>
+            <option>Eletrônico</option>
+        </select>
+
+        <input type="number" id="quantidade" placeholder="Quantidade estimada (kg)" required>
+        <input type="date" id="data" required>
+
+        <textarea id="obs" placeholder="Observações"></textarea>
+
+        <button type="submit">Solicitar Recolha</button>
+    </form>
+
+    <div id="mensagem"></div>
+</div>
+
+<script>
+document.getElementById("formRecolha").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const empresa = document.getElementById("empresa").value;
+
+    document.getElementById("mensagem").innerHTML =
+        "✅ Pedido de recolha enviado com sucesso, " + empresa + "!";
+    
+    document.getElementById("mensagem").style.color = "green";
+
+    this.reset();
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoCidade</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #2ecc71, #27ae60);
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    .logo {
+        width: 180px;
+        margin-bottom: 30px;
+    }
+
+    h1 {
+        color: white;
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    button {
+        padding: 12px 35px;
+        font-size: 18px;
+        border: none;
+        border-radius: 30px;
+        background-color: white;
+        color: #27ae60;
+        cursor: pointer;
+        transition: 0.3s;
+        justify-content: center;
+        text-align: center;
+        justify-items: center;
+    }
+
+    button:hover {
+        background-color: #ecf0f1;
+        transform: scale(1.05);
+    }
+    .ja{
+        justify-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .container h1{
+        color: #103f24;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <!-- Coloque aqui o seu logotipo -->
+    <img src="ft-removebg-preview.png" alt="Logo EcoCidade" class="logo"><h1>EcoCidade</h1><br>
+
+    <!-- Caso ainda não tenha imagem, pode usar apenas o nome -->
+    <!-- <h1>EcoCidade</h1> -->
+
+    <button onclick="entrar()" ><a href="2lixo.html"></a>Entrar</button>
+</div>
+
+<script>
+function entrar(){
+    // Aqui você pode colocar o link da próxima página
+    window.location.href = "2lixo.html";
+}
+</script>
+
+</body>
+</html>

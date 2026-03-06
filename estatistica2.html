@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Estatísticas | Painel Admin</title>
+  <style>/* ===== ESTATÍSTICAS ===== */
+
+.estatistica-container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.estatistica-container h2 {
+  text-align: center;
+  color: #1b8f4c;
+  margin-bottom: 30px;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.cards div {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.cards span {
+  display: block;
+  margin-top: 10px;
+  font-size: 2em;
+  font-weight: bold;
+  color: #1b5f8f;
+}
+
+/* Gráficos */
+.graficos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.grafico-box {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #1b8f4c;
+  color: #e9e3e3;
+}
+
+.navbar nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+nav ul{
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    list-style: none;
+    background: #1b8f4c;
+}
+nav a:hover{
+    color: rgb(15, 15, 15);
+    padding: 6px;
+}
+.logo {
+  font-family:   Arial, sans-serif;
+  font-size: 30px;
+
+}
+</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">📊 Estatísticas</div>
+  <nav>
+    <a href="2lixo.html">inicio</a>
+    <a href="mapa.html" class="active">mapa</a>
+    <a href="relatorio.html">relatorio </nav>
+</header>
+
+<div class="estatistica-container">
+
+  <h2>Resumo Geral</h2>
+
+  <!-- CARDS -->
+  <div class="cards">
+    <div>Total de Denúncias <span id="total"></span></div>
+    <div>Resolvidas <span id="resolvidas"></span></div>
+    <div>Pendentes <span id="pendentes"></span></div>
+  </div>
+
+  <!-- GRÁFICOS -->
+  <div class="graficos">
+
+    <div class="grafico-box">
+      <h3>Denúncias por Mês</h3>
+      <canvas id="graficoBarras" width="500" height="300"></canvas>
+    </div>
+
+    <div class="grafico-box">
+      <h3>Estado das Denúncias</h3>
+      <canvas id="graficoCircular" width="300" height="300"></canvas>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="js/estatistica.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () {
+
+  // DADOS
+  const dados = {
+    total: 120,
+    resolvidas: 75,
+    pendentes: 45,
+    mensal: [10, 15, 8, 20, 25, 18, 24]
+  };
+
+  // NUMEROS
+  document.getElementById("total").innerText = dados.total;
+  document.getElementById("resolvidas").innerText = dados.resolvidas;
+  document.getElementById("pendentes").innerText = dados.pendentes;
+
+  /* ===== GRÁFICO DE BARRAS ===== */
+  const canvasB = document.getElementById("graficoBarras");
+  const ctxB = canvasB.getContext("2d");
+
+  let x = 40;
+  dados.mensal.forEach(valor => {
+    ctxB.fillStyle = "#1b8f4c";
+    ctxB.fillRect(x, canvasB.height - valor * 8, 40, valor * 8);
+    ctxB.fillStyle = "#000";
+    ctxB.fillText(valor, x + 10, canvasB.height - valor * 8 - 5);
+    x += 60;
+  });
+
+  /* ===== GRÁFICO CIRCULAR ===== */
+  const canvasC = document.getElementById("graficoCircular");
+  const ctxC = canvasC.getContext("2d");
+
+  const total = dados.resolvidas + dados.pendentes;
+  const anguloResolvidas = (dados.resolvidas / total) * 2 * Math.PI;
+
+  ctxC.beginPath();
+  ctxC.moveTo(150,150);
+  ctxC.arc(150,150,120,0,anguloResolvidas);
+  ctxC.fillStyle = "#1b8f4c";
+  ctxC.fill();
+
+  ctxC.beginPath();
+  ctxC.moveTo(150,150);
+  ctxC.arc(150,150,120,anguloResolvidas,2*Math.PI);
+  ctxC.fillStyle = "#f4b400";
+  ctxC.fill();
+});
+</script>
+</body>
+</html>
